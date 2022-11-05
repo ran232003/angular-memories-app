@@ -1,0 +1,34 @@
+<div>
+  <div class="signup">
+    <div class="center">
+      <h3>{{ pageState }}</h3>
+    </div>
+    <div class="all-inputs">
+      <app-input
+        *ngIf="pageState === 'SIGNUP'"
+        lable="Name"
+        name="name"
+        type="text"
+        (valueChange)="change($event)"
+      ></app-input>
+      <app-input
+        name="email"
+        type="text"
+        (valueChange)="change($event)"
+        lable="Email"
+      ></app-input>
+      <app-input
+        name="password"
+        type="password"
+        (valueChange)="change($event)"
+        lable="Password"
+      ></app-input>
+    </div>
+    <button mat-raised-button color="primary">{{ pageState }}</button>
+    <P>Or, SignUp Using</P>
+    <div class="icons">
+      <i class="fab fa-facebook fa-3x iconFcbook"></i>
+      <i class="fab fa-google fa-3x icongoogle"></i>
+    </div>
+  </div>
+</div>

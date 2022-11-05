@@ -1,0 +1,15 @@
+<form class="example-form test">
+  <mat-form-field class="example-full-width myInput" appearance="fill">
+    <mat-label class="lable">{{ lable }}</mat-label>
+    <input
+      class="myInput"
+      matInput
+      placeholder="Ex. Pizza"
+      [type]="type"
+      [value]="value"
+      [name]="name"
+      [(ngModel)]="value"
+      (change)="onChange()"
+    /><mat-icon *ngIf="lable === 'Password'" matSuffix>lock</mat-icon>
+  </mat-form-field>
+</form>

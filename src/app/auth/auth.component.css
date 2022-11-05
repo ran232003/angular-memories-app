@@ -1,0 +1,47 @@
+.signup {
+  margin: 0 auto;
+  padding: 1rem;
+  width: 90%;
+  max-width: 30rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 12px;
+  background-color: white;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.center {
+  margin: auto;
+  width: 70%;
+  text-align: center;
+  padding: 10px;
+}
+.mySnackbar {
+  background-color: brown;
+}
+button.mat-raised-button {
+  border-radius: 20px;
+  width: 80%;
+}
+.all-inputs {
+  width: 80%;
+}
+.icons {
+  display: flex;
+  width: 30%;
+  justify-content: space-around;
+}
+.iconFcbook {
+  color: blue;
+  cursor: pointer;
+}
+.icongoogle {
+  color: red;
+  cursor: pointer;
+}
+p {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
