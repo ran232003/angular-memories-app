@@ -25,7 +25,6 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider,
 } from '@abacritt/angularx-social-login';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,10 +42,10 @@ import {
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    SocialLoginModule,
     FormsModule,
     MatIconModule,
     HttpClientModule,
+    SocialLoginModule,
   ],
   providers: [
     {
@@ -56,11 +55,9 @@ import {
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('clientId'),
-          },
-          {
-            id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('clientId'),
+            provider: new GoogleLoginProvider(
+              '271787983785-g7fkd6s070t27er2nnqd5hp1htfqn6lb.apps.googleusercontent.com'
+            ),
           },
         ],
         onError: (err) => {

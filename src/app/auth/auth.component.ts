@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SocialAuthService, SocialUser } from 'angularx-social-login';
-import {
-  FacebookLoginProvider,
-  GoogleLoginProvider,
-} from 'angularx-social-login';
+import { SocialAuthService } from '@abacritt/angularx-social-login';
+import { SocialUser } from '@abacritt/angularx-social-login';
 
 @Component({
   selector: 'app-auth',
@@ -13,20 +10,20 @@ import {
 })
 export class AuthComponent implements OnInit {
   pageState: String = '';
-  user!: SocialUser;
   authObject: any = {};
   constructor(
     private router: ActivatedRoute,
     private authService: SocialAuthService
   ) {}
+  user!: SocialUser;
 
   signInWithGoogle(): void {
-    try {
-      this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-      console.log('tesrt');
-    } catch (error) {
-      console.log(error, 'error');
-    }
+    // try {
+    //   this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    //   console.log('tesrt');
+    // } catch (error) {
+    //   console.log(error, 'error');
+    // }
   }
   ngOnInit(): void {
     this.router.params.subscribe((param) => {
@@ -34,10 +31,9 @@ export class AuthComponent implements OnInit {
       this.pageState = param['status'].toUpperCase();
       console.log(param['status']);
     });
-    console.log('sad');
     this.authService.authState.subscribe((user) => {
       this.user = user;
-      console.log('sassd');
+      console.log('this.user', this.user);
     });
   }
   change(event: any) {
@@ -45,7 +41,5 @@ export class AuthComponent implements OnInit {
     this.authObject[key] = event.value;
     console.log(this.authObject, 'this.authObject', event);
   }
-  signOut(): void {
-    this.authService.signOut();
-  }
+  signOut(): void {}
 }
