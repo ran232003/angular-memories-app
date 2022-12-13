@@ -4,37 +4,22 @@
       <h3>{{ pageState }}</h3>
     </div>
     <div class="all-inputs">
-      <app-input
-        *ngIf="pageState === 'SIGNUP'"
-        lable="Name"
-        name="name"
-        type="text"
-        (valueChange)="change($event)"
-      ></app-input>
-      <app-input
-        name="email"
-        type="text"
-        (valueChange)="change($event)"
-        lable="Email"
-      ></app-input>
-      <app-input
-        name="password"
-        type="password"
-        (valueChange)="change($event)"
-        lable="Password"
-      ></app-input>
+      <app-auth-input (valueChange)="change($event)"></app-auth-input>
     </div>
-    <button mat-raised-button color="primary">{{ pageState }}</button>
-    <P>Or, SignUp Using</P>
+    <button class="buttonAuth" mat-raised-button color="primary">
+      {{ pageState }}
+    </button>
+    <h4>Or, SignIn Using</h4>
     <div class="icons">
       <i class="fab fa-facebook fa-3x iconFcbook"></i>
-      <i
+      <!-- <i
         (click)="signInWithGoogle()"
-        class="fab fa-google fa-3x icongoogle"
-      ></i>
+        class="fab fa-google fa-2x icongoogle"
+      ></i> -->
       <asl-google-signin-button
         type="icon"
-        size="medium"
+        size="large"
+        shape="circle"
       ></asl-google-signin-button>
     </div>
   </div>

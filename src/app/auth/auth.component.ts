@@ -10,7 +10,9 @@ import { SocialUser } from '@abacritt/angularx-social-login';
 })
 export class AuthComponent implements OnInit {
   pageState: String = '';
+  state!: string;
   authObject: any = {};
+  validateArray = ['email', 'required'];
   constructor(
     private router: ActivatedRoute,
     private authService: SocialAuthService
@@ -27,19 +29,19 @@ export class AuthComponent implements OnInit {
   }
   ngOnInit(): void {
     this.router.params.subscribe((param) => {
-      console.log(param, 'tessss');
       this.pageState = param['status'].toUpperCase();
+      this.state = param['status'];
       console.log(param['status']);
     });
     this.authService.authState.subscribe((user) => {
       this.user = user;
-      console.log('this.user', this.user);
     });
   }
   change(event: any) {
     let key = event.name;
+    let valid = key + 'Valid';
+    this.authObject[valid] = event.valid;
     this.authObject[key] = event.value;
-    console.log(this.authObject, 'this.authObject', event);
   }
   signOut(): void {}
 }

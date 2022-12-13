@@ -1,7 +1,9 @@
-<form class="example-form test" #form="ngForm">
+<!-- <form class="example-form test" #form="ngForm" [formGroup]="myForm">
   <mat-form-field class="example-full-width myInput" appearance="fill">
     <mat-label class="lable">{{ lable }}</mat-label>
     <input
+      formControlName="ranForm"
+      (change)="onChange2()"
       class="myInput"
       matInput
       [placeholder]="lable"
@@ -10,18 +12,8 @@
       [name]="name"
       ngModel
       [(ngModel)]="value"
-      required
-      minlength="5"
-      maxlength="10"
-      email
-      (change)="onChange()"
       (blur)="functionName()"
     /><mat-icon *ngIf="lable === 'Password'" matSuffix>lock</mat-icon>
   </mat-form-field>
   <mat-error *ngIf="!valid"> {{ this.errorMessage }} </mat-error>
-</form>
-<!-- <form class="example-form test" [formGroup]="myForm">
-  <mat-form-field class="example-full-width myInput" appearance="fill">
-    <input matInput formControlName="ranForm" (change)="onChange2()" />
-  </mat-form-field>
 </form> -->

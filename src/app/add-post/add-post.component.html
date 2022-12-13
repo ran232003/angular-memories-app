@@ -1,0 +1,51 @@
+<form class="example-form test" #form="ngForm" [formGroup]="myForm">
+  <div>
+    <mat-form-field class="example-full-width myInput" appearance="fill">
+      <mat-label class="lable">Title</mat-label>
+      <input
+        formControlName="titleForm"
+        (change)="onChange2('titleForm', 'title')"
+        class="myInput"
+        matInput
+        placeholder="Enter Title"
+        type="text"
+        name="title"
+        ngModel
+        [(ngModel)]="title"
+      />
+    </mat-form-field>
+    <mat-error> {{ this.errorMessages.titleForm }} </mat-error>
+  </div>
+  <mat-form-field class="example-full-width myInput" appearance="outline">
+    <mat-label class="lable">Description</mat-label>
+
+    <textarea
+      formControlName="imageForm"
+      (change)="onChange2('imageForm', 'image')"
+      class="myInput"
+      matInput
+      placeholder="Enter Image"
+      type="text"
+      name="image"
+      ngModel
+      [(ngModel)]="image"
+    >
+    </textarea>
+  </mat-form-field>
+  <mat-error> {{ this.errorMessages.descriptionForm }} </mat-error>
+  <mat-form-field class="example-full-width myInput" appearance="fill">
+    <mat-label class="lable">Image</mat-label>
+    <input
+      formControlName="descriptionForm"
+      (change)="onChange2('descriptionForm', 'description')"
+      class="myInput"
+      matInput
+      placeholder="Enter Description"
+      type="text"
+      name="description"
+      ngModel
+      [(ngModel)]="description"
+    />
+  </mat-form-field>
+  <mat-error> {{ this.errorMessages.imageForm }} </mat-error>
+</form>

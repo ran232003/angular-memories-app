@@ -14,7 +14,7 @@ import { InputComponent } from './input/input.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import {
@@ -25,6 +25,14 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider,
 } from '@abacritt/angularx-social-login';
+import { NewInputComponent } from './new-input/new-input.component';
+import { AuthInputComponent } from './auth/auth-input/auth-input.component';
+import { MemoriesComponent } from './memories/memories.component';
+import { MatCardModule } from '@angular/material/card';
+import { MemoryItemComponent } from './memories/memory-item/memory-item.component';
+import { AddPostComponent } from './add-post/add-post.component';
+import { MatFileUploadModule } from 'angular-material-fileupload';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,12 +41,19 @@ import {
     HomepageComponent,
     AuthComponent,
     InputComponent,
+    NewInputComponent,
+    AuthInputComponent,
+    MemoriesComponent,
+    MemoryItemComponent,
+    AddPostComponent,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     NgbModule,
     AppRouting,
+    MatFileUploadModule,
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
@@ -46,6 +61,7 @@ import {
     MatIconModule,
     HttpClientModule,
     SocialLoginModule,
+    MatCardModule,
   ],
   providers: [
     {

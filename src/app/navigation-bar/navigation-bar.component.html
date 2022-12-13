@@ -18,6 +18,15 @@
           <!-- Step 4: Close the menu when a link is clicked. -->
           <a
             class="nav-link"
+            routerLink="/memories"
+            (click)="isMenuCollapsed = true"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item active">
+          <!-- Step 4: Close the menu when a link is clicked. -->
+          <a
+            class="nav-link"
             routerLink="/auth/signup"
             (click)="isMenuCollapsed = true"
             >SignUp</a
@@ -34,9 +43,9 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            [routerLink]="'.'"
+            routerLink="/add-memory"
             (click)="isMenuCollapsed = true"
-            >About</a
+            >Add Memory</a
           >
         </li>
       </ul>

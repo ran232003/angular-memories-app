@@ -1,0 +1,12 @@
+<div>
+  <div class="memory-headline">
+    <h1 class="memory-headline">Memories</h1>
+  </div>
+  <div class="memory-list">
+    <app-memory-item
+      class="test"
+      *ngFor="let memory of localMemories; index as i"
+      [memory]="memory"
+    ></app-memory-item>
+  </div>
+</div>

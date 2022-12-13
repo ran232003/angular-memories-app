@@ -31,17 +31,32 @@ button.mat-raised-button {
 .icons {
   display: flex;
   width: 30%;
-  justify-content: space-around;
+  justify-content: space-evenly;
+}
+.mat-body,
+.mat-body-1,
+.mat-typography {
+  font: 400 13px/20px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
 }
 .iconFcbook {
   color: blue;
   cursor: pointer;
+  align-self: center;
 }
 .icongoogle {
   color: red;
   cursor: pointer;
+  align-self: center;
+  font: 400 15px/20px Roboto, "Helvetica Neue", sans-serif;
 }
-p {
+h4 {
   margin-top: 50px;
   margin-bottom: 20px;
+}
+.buttonAuth {
+  margin-top: 30px;
+}
+.fa-3x {
+  font-size: 2.5em;
 }

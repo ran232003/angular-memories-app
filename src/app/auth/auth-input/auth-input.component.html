@@ -1,0 +1,52 @@
+<form class="example-form test" #form="ngForm" [formGroup]="myForm">
+  <div *ngIf="pageStatus !== 'login'">
+    <mat-form-field class="example-full-width myInput" appearance="fill">
+      <mat-label class="lable">Name</mat-label>
+      <input
+        formControlName="nameForm"
+        (change)="onChange2('nameForm', 'name')"
+        class="myInput"
+        matInput
+        placeholder="Enter Name"
+        type="text"
+        name="name"
+        ngModel
+        [(ngModel)]="name"
+        (blur)="functionName()"
+      />
+    </mat-form-field>
+    <mat-error> {{ this.errorMessages.nameForm }} </mat-error>
+  </div>
+  <mat-form-field class="example-full-width myInput" appearance="fill">
+    <mat-label class="lable">Email</mat-label>
+    <input
+      formControlName="emailForm"
+      (change)="onChange2('emailForm', 'email')"
+      class="myInput"
+      matInput
+      placeholder="Enter Email"
+      type="email"
+      name="email"
+      ngModel
+      [(ngModel)]="email"
+      (blur)="functionName()"
+    />
+  </mat-form-field>
+  <mat-error> {{ this.errorMessages.emailForm }} </mat-error>
+  <mat-form-field class="example-full-width myInput" appearance="fill">
+    <mat-label class="lable">Password</mat-label>
+    <input
+      formControlName="passwordForm"
+      (change)="onChange2('passwordForm', 'password')"
+      class="myInput"
+      matInput
+      placeholder="Enter Password"
+      type="password"
+      name="password"
+      ngModel
+      [(ngModel)]="password"
+      (blur)="functionName()"
+    /><mat-icon matSuffix>lock</mat-icon>
+  </mat-form-field>
+  <mat-error> {{ this.errorMessages.passwordForm }} </mat-error>
+</form>
